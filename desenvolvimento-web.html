@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Web - Infoserviços Tecnologias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+                        url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-content p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo">Infoserviços Tecnologias</a>
+            <div class="nav-links">
+                <a href="./index.html">Home</a>
+                <a href="./desenvolvimento-web.html">Desenvolvimento Web</a>
+                <a href="./aplicativos-mobile.html">Aplicativos Mobile</a>
+                <a href="./manutencao-montagem.html">Manutenção</a>
+                <a href="./quem-somos.html">Quem Somos</a>
+                <a href="./contatos.html">Contatos</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Desenvolvimento Web</h1>
+            <p>Criamos sites e aplicações web modernas e responsivas</p>
+            <a href="#servicos" class="btn">Conheça Nossos Serviços</a>
+        </div>
+    </section>
+
+    <main id="servicos">
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Sites Institucionais" class="service-image">
+                <div class="service-content">
+                    <h3>Sites Institucionais</h3>
+                    <p>Criamos sites profissionais que representam sua empresa na internet. Desenvolvemos layouts modernos, responsivos e otimizados para mecanismos de busca.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Sites Institucionais." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="E-commerce" class="service-image">
+                <div class="service-content">
+                    <h3>E-commerce</h3>
+                    <p>Desenvolvemos lojas virtuais completas com sistema de pagamento, gestão de produtos, carrinho de compras e integração com marketplaces.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de E-commerce." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Sistemas Web" class="service-image">
+                <div class="service-content">
+                    <h3>Sistemas Web</h3>
+                    <p>Criamos sistemas web personalizados para gestão de negócios, com dashboards, relatórios e integração com outros sistemas.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Sistemas Web." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/euzebio.olivertino.borges" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/infoservicos_np" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/euzebio-o-b-ba454572" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/euzebionp" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2024 Infoserviços Tecnologias. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html> 

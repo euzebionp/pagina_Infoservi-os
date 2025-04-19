@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infoserviços Tecnologias - Soluções em Tecnologia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .services {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-content p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo">Infoserviços Tecnologias</a>
+            <div class="nav-links">
+                <a href="./index.html">Home</a>
+                <a href="./desenvolvimento-web.html">Desenvolvimento Web</a>
+                <a href="./aplicativos-mobile.html">Aplicativos Mobile</a>
+                <a href="./manutencao-montagem.html">Manutenção</a>
+                <a href="./quem-somos.html">Quem Somos</a>
+                <a href="./contatos.html">Contatos</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transformando Ideias em Realidade Digital</h1>
+            <p>Soluções tecnológicas inovadoras para impulsionar seu negócio</p>
+            <a href="#servicos" class="btn">Conheça Nossos Serviços</a>
+        </div>
+    </section>
+
+    <section id="servicos" class="services">
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Desenvolvimento Web" class="service-image">
+                <div class="service-content">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Sites e aplicações web modernas e responsivas.</p>
+                    <a href="desenvolvimento-web.html" class="btn">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Aplicativos Mobile" class="service-image">
+                <div class="service-content">
+                    <h3>Aplicativos Mobile</h3>
+                    <p>Aplicativos nativos e híbridos para iOS e Android.</p>
+                    <a href="aplicativos-mobile.html" class="btn">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Manutenção e Montagem" class="service-image">
+                <div class="service-content">
+                    <h3>Manutenção e Montagem</h3>
+                    <p>Manutenção de computadores e suporte técnico.</p>
+                    <a href="manutencao-montagem.html" class="btn">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>Sobre Nós</h2>
+        <p>A Infoserviços Tecnologias é uma empresa especializada em soluções tecnológicas, oferecendo serviços de desenvolvimento web, aplicativos mobile e manutenção de computadores. Nossa equipe é formada por profissionais altamente qualificados e apaixonados por tecnologia.</p>
+        <a href="./contatos.html" class="btn">Entre em Contato</a>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/euzebio.olivertino.borges" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/infoservicos_np" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/euzebio-o-b-ba454572" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/euzebionp" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2024 Infoserviços Tecnologias. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html> 

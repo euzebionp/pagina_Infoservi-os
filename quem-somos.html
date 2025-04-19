@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Infoserviços Tecnologias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo">Infoserviços Tecnologias</a>
+            <div class="nav-links">
+                <a href="./index.html">Home</a>
+                <a href="./desenvolvimento-web.html">Desenvolvimento Web</a>
+                <a href="./aplicativos-mobile.html">Aplicativos Mobile</a>
+                <a href="./manutencao-montagem.html">Manutenção</a>
+                <a href="./quem-somos.html">Quem Somos</a>
+                <a href="./contatos.html">Contatos</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Quem Somos</h1>
+            <p>Conheça nossa história e nossa missão</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Nossa História</h2>
+                <p>A Infoserviços Tecnologias nasceu da paixão por tecnologia e da vontade de oferecer soluções inovadoras para nossos clientes. Desde nossa fundação, temos se dedicado a desenvolver projetos que transformam ideias em realidade digital.</p>
+                <p>Nossa equipe é formada por profissionais altamente qualificados e apaixonados por tecnologia, sempre em busca de novas soluções e tecnologias para melhorar a experiência dos nossos clientes.</p>
+                <p>Acreditamos que a tecnologia deve ser acessível e fácil de usar, por isso nos esforçamos para criar soluções intuitivas e eficientes que atendam às necessidades específicas de cada cliente.</p>
+            </div>
+            <div class="about-text">
+                <h2>Nossa Missão</h2>
+                <p>Nossa missão é fornecer soluções tecnológicas de alta qualidade que impulsionem o crescimento dos nossos clientes, sempre mantendo o compromisso com a excelência e a satisfação do cliente.</p>
+                <p>Buscamos ser referência em desenvolvimento web, aplicativos mobile e serviços de manutenção, oferecendo um atendimento personalizado e soluções sob medida para cada projeto.</p>
+                <p>Valorizamos a inovação, a qualidade e o compromisso com resultados, sempre trabalhando em parceria com nossos clientes para alcançar os melhores resultados possíveis.</p>
+            </div>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Inovação</h3>
+                <p>Buscamos sempre as melhores e mais modernas soluções tecnológicas.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Compromisso</h3>
+                <p>Dedicação total aos projetos e satisfação dos nossos clientes.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Resultados</h3>
+                <p>Foco em entregar soluções que gerem valor para nossos clientes.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-users"></i>
+                <h3>Equipe</h3>
+                <p>Profissionais qualificados e apaixonados por tecnologia.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/euzebio.olivertino.borges" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/infoservicos_np" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/euzebio-o-b-ba454572" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/euzebionp" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2024 Infoserviços Tecnologias. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html> 

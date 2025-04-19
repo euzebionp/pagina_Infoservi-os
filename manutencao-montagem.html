@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção e Montagem - Infoserviços Tecnologias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f5f6fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+                        url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .services {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-content p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo">Infoserviços Tecnologias</a>
+            <div class="nav-links">
+                <a href="./index.html">Home</a>
+                <a href="./desenvolvimento-web.html">Desenvolvimento Web</a>
+                <a href="./aplicativos-mobile.html">Aplicativos Mobile</a>
+                <a href="./manutencao-montagem.html">Manutenção</a>
+                <a href="./quem-somos.html">Quem Somos</a>
+                <a href="./contatos.html">Contatos</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Manutenção e Montagem</h1>
+            <p>Serviços especializados em manutenção de computadores e montagem de equipamentos.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Manutenção de Computadores" class="service-image">
+                <div class="service-content">
+                    <h3>Manutenção de Computadores</h3>
+                    <p>Oferecemos serviços completos de manutenção para desktop e notebook, incluindo diagnóstico preciso, reparo de hardware, atualização de software e otimização de desempenho. Nossa equipe técnica especializada garante a máxima eficiência do seu equipamento.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Manutenção de Computadores." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Montagem de Computadores" class="service-image">
+                <div class="service-content">
+                    <h3>Montagem de Computadores</h3>
+                    <p>Desenvolvemos computadores personalizados de acordo com suas necessidades específicas. Utilizamos componentes de alta qualidade e garantimos a compatibilidade entre todas as peças. Oferecemos opções para uso doméstico, profissional e gaming.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Montagem de Computadores." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Suporte Técnico" class="service-image">
+                <div class="service-content">
+                    <h3>Suporte Técnico</h3>
+                    <p>Fornecemos suporte técnico presencial e remoto 24/7. Nossa equipe está sempre pronta para resolver qualquer problema técnico, seja por telefone, chat ou presencialmente. Garantimos respostas rápidas e soluções eficientes.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Suporte Técnico." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Instalação de Programas" class="service-image">
+                <div class="service-content">
+                    <h3>Instalação de Programas</h3>
+                    <p>Realizamos a instalação e configuração de qualquer software necessário para seu negócio ou uso pessoal. Garantimos a compatibilidade com seu sistema operacional e oferecemos treinamento básico para utilização dos programas instalados.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Instalação de Programas." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Automação WhatsApp" class="service-image">
+                <div class="service-content">
+                    <h3>Automação WhatsApp</h3>
+                    <p>Desenvolvemos automações personalizadas para WhatsApp que aumentam sua produtividade. Incluímos recursos como respostas automáticas, gestão de contatos, envio programado de mensagens e integração com outros sistemas de gestão.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Automação WhatsApp." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Automação Instagram" class="service-image">
+                <div class="service-content">
+                    <h3>Automação Instagram</h3>
+                    <p>Criamos automações para Instagram que otimizam sua presença digital. Incluímos recursos como agendamento de posts, gestão de comentários, análise de métricas e integração com outras redes sociais para maximizar seu alcance.</p>
+                    <a href="https://wa.me/5534998632929?text=Olá! Gostaria de saber mais sobre o serviço de Automação Instagram." target="_blank" class="btn">Falar no WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Nossos Serviços</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-tools"></i>
+                <h3>Manutenção Preventiva</h3>
+                <p>Manutenção regular para evitar problemas futuros.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-microchip"></i>
+                <h3>Upgrade de Hardware</h3>
+                <p>Atualização de componentes para melhor performance.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-virus-slash"></i>
+                <h3>Remoção de Vírus</h3>
+                <p>Limpeza e proteção contra malware e vírus.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-headset"></i>
+                <h3>Suporte 24/7</h3>
+                <p>Atendimento técnico disponível a qualquer momento.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-download"></i>
+                <h3>Instalação de Software</h3>
+                <p>Instalação e configuração de programas específicos.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-robot"></i>
+                <h3>Automação de Processos</h3>
+                <p>Criação de automações para WhatsApp e Instagram.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-comments"></i>
+                <h3>Gestão de Mensagens</h3>
+                <p>Automação de respostas e gestão de contatos.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Análise de Desempenho</h3>
+                <p>Monitoramento e otimização de sistemas.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/euzebio.olivertino.borges" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/infoservicos_np" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/euzebio-o-b-ba454572" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/euzebionp" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2024 Infoserviços Tecnologias. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html> 
