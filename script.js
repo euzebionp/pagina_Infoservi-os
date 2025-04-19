@@ -98,4 +98,14 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
 document.addEventListener('DOMContentLoaded', () => {
     loadFacebookPosts();
     loadInstagramPosts();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuButton.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        menuButton.classList.toggle('active');
+    });
 }); 
