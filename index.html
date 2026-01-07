@@ -149,6 +149,40 @@
             transform: translateY(-5px);
         }
 
+        .featured-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+        }
+
+        .featured-card .service-content h3 {
+            color: white;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: #f39c12;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+
+        .featured-card .btn {
+            background-color: white;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .featured-card .btn:hover {
+            background-color: #f0f0f0;
+        }
+
         .service-image {
             width: 100%;
             height: 200px;
@@ -286,6 +320,19 @@
 
     <section id="servicos" class="services">
         <div class="services-grid">
+            <!-- Card em Destaque - Imovel Intel -->
+            <div class="service-card featured-card">
+                <span class="featured-badge">🌟 PROJETO EM DESTAQUE</span>
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Imovel Intel" class="service-image">
+                <div class="service-content">
+                    <h3>🏠 Imovel Intel - Inteligência Imobiliária</h3>
+                    <p>Plataforma completa de inteligência imobiliária que revoluciona a forma de buscar e analisar imóveis. Sistema desenvolvido com tecnologia de ponta, incluindo busca avançada, análise de dados em tempo real, integração com múltiplas fontes e dashboard interativo para gestão completa do mercado imobiliário.</p>
+                    <p><strong>Tecnologias:</strong> React, Node.js, NestJS, PostgreSQL, Python, APIs de Integração</p>
+                    <a href="https://www.imovelintel.online" target="_blank" class="btn" style="margin-right: 1rem;">🚀 Acessar Plataforma</a>
+                    <a href="https://wa.me/5534998632929?text=Olá! Vi o projeto Imovel Intel e gostaria de desenvolver algo similar." target="_blank" class="btn">💬 Desenvolver Projeto Similar</a>
+                </div>
+            </div>
+
             <div class="service-card">
                 <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Desenvolvimento Web" class="service-image">
                 <div class="service-content">
