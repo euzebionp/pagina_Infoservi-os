@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/username/public_html/
+    - export DEPLOYPATH=/home2/euzebi67/infoservicos.online/
     - /bin/cp -R * $DEPLOYPATH
