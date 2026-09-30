@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "pagina-infoservi-os" generated at 2026-09-30T18:18:51.850Z.

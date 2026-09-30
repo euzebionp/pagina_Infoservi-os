@@ -1,63 +1,87 @@
-# Infoserviços Tecnologias - Landing Page
+# Infoserviços Tecnologias
 
-Landing page moderna e responsiva para a Infoserviços Tecnologias, com integração das redes sociais Facebook e Instagram.
+Site institucional da Infoserviços Tecnologias. Site 100% estático (HTML, CSS e JS), publicado no **Cloudflare Workers**.
 
-## Características
+**Produção:** https://pagina-infoservi-os.infoservicos.workers.dev/
 
-- Design moderno e responsivo
-- Integração com Facebook e Instagram
-- Formulário de contato
-- Seção de serviços
-- Animações suaves
-- Compatível com todos os navegadores modernos
+## Requisitos
 
-## Configuração
+- Node.js 18 ou superior
+- Conta no Cloudflare
 
-1. Clone este repositório
-2. Configure as credenciais das APIs de redes sociais no arquivo `script.js`:
-   - Facebook App ID
-   - Facebook Page ID
-   - Facebook Access Token
-   - Instagram Access Token
+## Instalação
 
-### Como obter as credenciais
+```bash
+npm install
+```
 
-#### Facebook
-1. Crie uma conta de desenvolvedor no [Facebook Developers](https://developers.facebook.com)
-2. Crie um novo aplicativo
-3. Obtenha o App ID
-4. Configure as permissões necessárias
-5. Gere um token de acesso de longa duração
+## Comandos
 
-#### Instagram
-1. Use a mesma conta de desenvolvedor do Facebook
-2. Configure o Instagram Basic Display API
-3. Gere um token de acesso de longa duração
+| Comando | O que faz |
+|---|---|
+| `npm run dev` | Sobe o site em `http://localhost:8787` com recarga automática |
+| `npm run deploy` | Publica em produção (aplica as alterações imediatamente) |
+| `npm run preview` |igual ao dev, mas na infraestrutura da Cloudflare |
 
-## Estrutura do Projeto
+Publicar pela primeira vez exige autenticar:
+
+```bash
+npx wrangler login
+```
+
+## Estrutura
 
 ```
 .
-├── index.html          # Página principal
-├── styles.css          # Estilos CSS
-├── script.js           # JavaScript e integrações
-└── README.md          # Documentação
+├── site/                  # tudo o que vai para o ar
+│   ├── index.html
+│   ├── area-clientes.html
+│   ├── 404.html
+│   ├── desenvolvimento-web.html
+│   ├── aplicativos-mobile.html
+│   ├── manutencao-montagem.html
+│   ├── quem-somos.html
+│   ├── contatos.html
+│   ├── styles.css
+│   ├── script.js
+│   ├── favicon.ico
+│   ├── _headers           # cabeçalhos de segurança (CSP, HSTS, etc.)
+│   ├── robots.txt
+│   └── sitemap.xml
+├── wrangler.toml          # configuração do Worker e dos assets
+├── package.json
+└── README.md
 ```
 
-## Personalização
+Qualquer arquivo novo que precise ir ao ar deve ficar em `site/`. Arquivos na raiz do repositório **não** são publicados.
 
-- As cores principais podem ser alteradas no arquivo `styles.css` através das variáveis CSS
-- O conteúdo pode ser modificado no arquivo `index.html`
-- As integrações sociais podem ser ajustadas no arquivo `script.js`
+## Segurança
 
-## Contribuição
+Os cabeçalhos de segurança ficam em `site/_headers` e são aplicados automaticamente pelo Cloudflare: HSTS, Content Security Policy, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` e `Permissions-Policy`.
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+Ao adicionar um domínio externo (CDN de script, fonte ou imagem), libere-o também na diretiva correspondente da CSP em `site/_headers`, senão o navegador vai bloquear o recurso.
+
+**Nunca coloque chaves de API, tokens ou senhas no `script.js`**: tudo o que está nele é executado no navegador do visitante.
+
+## Área do Cliente
+
+`site/area-clientes.html` é uma tela de login que redireciona para o painel externo. Configure o destino no campo `hidden` `#cliente-destino`, dentro do `<form>`:
+
+```html
+<input type="hidden" id="cliente-destino" value="https://seu-painel.com.br/login">
+```
+
+A autenticação acontece no painel externo, não neste site. Para proteger a área de verdade, use o **Cloudflare Access** (Zero Trust) no domínio do painel.
+
+## Publicar alterações
+
+```bash
+git add -A
+git commit -m "descricao da alteracao"
+git push
+npm run deploy
+```
 
 ## Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes. 
+MIT.

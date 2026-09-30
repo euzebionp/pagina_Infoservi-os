@@ -298,62 +298,6 @@ nav {
     margin-bottom: 1.5rem;
 }
 
-/* Featured Card Special Styles */
-.featured-card {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, rgba(20,20,25,0.9), rgba(40,20,50,0.9));
-    border: 1px solid var(--secondary-color);
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    align-items: center;
-}
-
-.featured-card .service-image {
-    height: 100%;
-    min-height: 350px;
-}
-
-.featured-card:hover {
-    box-shadow: 0 0 30px rgba(208, 0, 255, 0.2);
-    border-color: var(--secondary-color);
-}
-
-.featured-card .service-content h3 {
-    color: var(--secondary-color);
-    font-size: 2rem;
-    text-shadow: 0 0 10px rgba(208, 0, 255, 0.3);
-}
-
-.featured-badge {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    background: var(--secondary-color);
-    color: #fff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    box-shadow: var(--glow-secondary);
-    z-index: 10;
-}
-
-.featured-card .btn {
-    border-color: var(--secondary-color);
-    color: var(--secondary-color);
-    margin-right: 1rem;
-}
-
-.featured-card .btn::before {
-    background: var(--secondary-color);
-}
-
-.featured-card .btn:hover {
-    color: #fff;
-    box-shadow: var(--glow-secondary);
-}
-
 /* About Section */
 .about {
     padding: 6rem 2rem;
@@ -373,6 +317,112 @@ nav {
     color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 3rem;
+}
+
+/* Área do Cliente */
+.client-area {
+    padding: calc(100vh - 80px) 2rem 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-area .container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.client-login-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: var(--glass-border);
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.client-login-card h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.client-login-card > p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.client-form .form-group {
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.client-form label {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.client-form input[type="email"],
+.client-form input[type="password"] {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: var(--glass-border);
+    border-radius: 6px;
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.client-form input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.client-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--glow-primary);
+}
+
+.client-notice {
+    display: none;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 165, 0, 0.4);
+    border-radius: 6px;
+    background: rgba(255, 165, 0, 0.1);
+    color: #ffb347;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.client-notice.visible {
+    display: block;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+
+.client-links {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.client-links a {
+    color: var(--primary-color);
 }
 
 /* Footer */
@@ -452,13 +502,5 @@ footer p {
 
     .hero h1 {
         font-size: 2.5rem;
-    }
-
-    .featured-card {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-card .service-image {
-        min-height: 250px;
     }
 }

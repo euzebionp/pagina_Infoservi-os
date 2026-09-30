@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Cliente - Infoserviços Tecnologias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo">Infoserviços Tecnologias</a>
+            <button class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="./index.html">Home</a>
+                <a href="./desenvolvimento-web.html">Desenvolvimento Web</a>
+                <a href="./aplicativos-mobile.html">Aplicativos Mobile</a>
+                <a href="./manutencao-montagem.html">Manutenção</a>
+                <a href="./quem-somos.html">Quem Somos</a>
+                <a href="./contatos.html">Contatos</a>
+                <a href="./area-clientes.html">Área do Cliente</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Área do Cliente</h1>
+            <p>Acesse o painel exclusivo de seus serviços contratados</p>
+        </div>
+    </section>
+
+    <main class="client-area">
+        <div class="container">
+            <div class="client-login-card">
+                <h2>Login da Área do Cliente</h2>
+                <p>Digite suas credenciais para acessar o painel. A autenticação é realizada no sistema oficial da Infoserviços Tecnologias.</p>
+
+                <form id="client-login-form" class="client-form">
+                    <div class="form-group">
+                        <label for="cliente-email">E-mail</label>
+                        <input type="email" id="cliente-email" name="cliente-email" placeholder="seu@email.com.br" required autocomplete="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cliente-senha">Senha</label>
+                        <input type="password" id="cliente-senha" name="cliente-senha" placeholder="Digite sua senha" required autocomplete="current-password">
+                    </div>
+
+                    <input type="hidden" id="cliente-destino" value="">
+
+                    <p id="cliente-aviso" class="client-notice"></p>
+
+                    <button type="submit" class="btn btn-block">Acessar Painel</button>
+                </form>
+
+                <div class="client-links">
+                    <a href="./contatos.html">Não possui acesso? Fale conosco</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/euzebio.olivertino.borges" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/infoservicos_np" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/euzebio-o-b-ba454572" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/euzebionp" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <p>&copy; 2026 Infoserviços Tecnologias. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

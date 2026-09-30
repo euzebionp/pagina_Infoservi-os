@@ -1,0 +1,22 @@
+# Cloudflare Workers - site 100% estático (sem código no servidor)
+# Deploy:  npm run deploy   (ou: npx wrangler deploy)
+# Preview: npm run dev      (ou: npx wrangler dev)
+# Docs:    https://developers.cloudflare.com/workers/static-assets/
+
+# O nome do worker define o subdomínio workers.dev:
+# pagina-infoservi-os.<sua-conta>.workers.dev
+name = "pagina-infoservi-os"
+compatibility_date = "2026-09-30"
+
+# Mantém o acesso pelo subdomínio workers.dev
+workers_dev = true
+
+[assets]
+directory = "./site"
+# página 404 do próprio site (/404.html) para caminhos inexistentes
+not_found_handling = "404-page"
+# mantém as URLs com .html (nada de redirecionamento automático)
+html_handling = "none"
+
+# Os cabeçalhos de segurança (CSP, HSTS, X-Frame-Options, etc.)
+# NÃO ficam aqui: estão em site/_headers, que o Cloudflare aplica sozinho.

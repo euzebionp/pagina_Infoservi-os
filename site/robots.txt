@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Página de erro (não deve ser indexada)
+Disallow: /404.html
+
+Sitemap: https://pagina-infoservi-os.infoservicos.workers.dev/sitemap.xml

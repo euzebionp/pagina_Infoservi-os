@@ -1,0 +1,13 @@
+# dependencias do wrangler
+node_modules/
+
+# cache e artefatos do wrangler
+.wrangler/
+worker/
+.dev.vars
+
+# logs e temporarios
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
