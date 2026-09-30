@@ -1,4 +1,4 @@
-# Cloudflare Workers - site 100% estático (sem código no servidor)
+# Cloudflare Workers - site estático
 # Deploy:  npm run deploy   (ou: npx wrangler deploy)
 # Preview: npm run dev      (ou: npx wrangler dev)
 # Docs:    https://developers.cloudflare.com/workers/static-assets/
@@ -7,6 +7,7 @@
 # pagina-infoservi-os.<sua-conta>.workers.dev
 name = "pagina-infoservi-os"
 compatibility_date = "2026-09-30"
+main = "./worker/index.js"
 
 # Mantém o acesso pelo subdomínio workers.dev
 workers_dev = true
@@ -17,6 +18,11 @@ directory = "./site"
 not_found_handling = "404-page"
 # mantém as URLs com .html (nada de redirecionamento automático)
 html_handling = "none"
+# binding usado pelo Worker para buscar os assets
+binding = "ASSETS"
+# com html_handling = "none" a raiz "/" não cai em "/index.html" e devolvia 404.
+# O Worker só entra em cena na raiz, para reescrever "/" -> "/index.html".
+run_worker_first = ["/"]
 
 # Os cabeçalhos de segurança (CSP, HSTS, X-Frame-Options, etc.)
 # NÃO ficam aqui: estão em site/_headers, que o Cloudflare aplica sozinho.
