@@ -55,8 +55,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!menuButton || !navLinks) return;
 
+    function setMenu(open) {
+        navLinks.classList.toggle('active', open);
+        menuButton.classList.toggle('active', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('menu-open', open);
+    }
+
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Abrir menu');
+
     menuButton.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        menuButton.classList.toggle('active');
+        setMenu(!navLinks.classList.contains('active'));
+    });
+
+    // Fecha ao navegar para outra pagina
+    navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            setMenu(false);
+        });
+    });
+
+    // Fecha com Esc
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            setMenu(false);
+            menuButton.focus();
+        }
+    });
+
+    // Se a tela grow e o menu mobile sumir, nao deixa estado preso
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 1024 && navLinks.classList.contains('active')) {
+            setMenu(false);
+        }
     });
 });
