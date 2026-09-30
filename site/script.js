@@ -21,32 +21,14 @@ if (contactForm) {
     });
 }
 
-// Área do Cliente: redireciona para o painel externo.
-// A senha NUNCA é enviada nem armazenada aqui — a autenticação
-// acontece no painel do Infoserviços. Configure o destino no campo
-// hidden "destino" dentro de area-clientes.html
-const clientForm = document.getElementById('client-login-form');
-
-if (clientForm) {
-    clientForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const email = clientForm.querySelector('#cliente-email');
-        const destino = clientForm.querySelector('#cliente-destino');
-        const aviso = document.getElementById('cliente-aviso');
-        const url = (destino.value || '').trim();
-
-        if (!url) {
-            aviso.textContent = 'Painel ainda não configurado. Fale com a gente para liberar seu acesso.';
-            aviso.classList.add('visible');
-            return;
-        }
-
-        const separator = url.includes('?') ? '&' : '?';
-        const emailValue = email ? encodeURIComponent(email.value.trim()) : '';
-        window.location.href = emailValue ? `${url}${separator}email=${emailValue}` : url;
-    });
-}
+// Área do Cliente
+//
+// A autenticação NÃO acontece aqui. O painel vive em outro domínio, protegido
+// pelo Cloudflare Access (Zero Trust), que exige um código enviado por e-mail.
+// Esta página é apenas um link para o painel — por isso não há formulário de
+// senha, nem qualquer segredo no arquivo.
+//
+// Para trocar o destino, edite o href do botão em area-clientes.html.
 
 // Menu mobile
 document.addEventListener('DOMContentLoaded', function() {

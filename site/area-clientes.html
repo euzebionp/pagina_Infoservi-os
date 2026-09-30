@@ -15,7 +15,7 @@
     <header>
         <nav>
             <a href="./index.html" class="logo">Infoserviços Tecnologias</a>
-            <button class="menu-button">
+            <button class="menu-button" aria-label="Abrir menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -42,29 +42,29 @@
     <main class="client-area">
         <div class="container">
             <div class="client-login-card">
-                <h2>Login da Área do Cliente</h2>
-                <p>Digite suas credenciais para acessar o painel. A autenticação é realizada no sistema oficial da Infoserviços Tecnologias.</p>
+                <i class="fas fa-shield-halved client-card-icon" aria-hidden="true"></i>
+                <h2>Acesso ao Painel</h2>
+                <p>Seus contratos, orçamentos e chamados ficam no painel do cliente. O acesso é liberado por código enviado para o seu e-mail — sem senha.</p>
 
-                <form id="client-login-form" class="client-form">
-                    <div class="form-group">
-                        <label for="cliente-email">E-mail</label>
-                        <input type="email" id="cliente-email" name="cliente-email" placeholder="seu@email.com.br" required autocomplete="username">
-                    </div>
+                <ol class="access-steps">
+                    <li>Abra o painel no botão abaixo</li>
+                    <li>Informe o e-mail cadastrado com a Infoserviços</li>
+                    <li>Digite o código de acesso que chegar no seu e-mail</li>
+                </ol>
 
-                    <div class="form-group">
-                        <label for="cliente-senha">Senha</label>
-                        <input type="password" id="cliente-senha" name="cliente-senha" placeholder="Digite sua senha" required autocomplete="current-password">
-                    </div>
+                <!-- workers.dev e por conta. Este host so existe depois de "npm run deploy:painel". -->
+                <a href="https://painel-infoservicos.infoservicos.workers.dev/" class="btn btn-block" target="_blank" rel="noopener">
+                    <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+                    Acessar o Painel
+                </a>
 
-                    <input type="hidden" id="cliente-destino" value="">
-
-                    <p id="cliente-aviso" class="client-notice"></p>
-
-                    <button type="submit" class="btn btn-block">Acessar Painel</button>
-                </form>
+                <p class="client-security-note">
+                    <i class="fas fa-circle-info" aria-hidden="true"></i>
+                    <span>A Infoserviços <strong>nunca</strong> pede sua senha por e-mail, telefone ou WhatsApp. Se alguém pedir, não compartilhe.</span>
+                </p>
 
                 <div class="client-links">
-                    <a href="./contatos.html">Não possui acesso? Fale conosco</a>
+                    <a href="./contatos.html">Não possui acesso? Solicite seu cadastro</a>
                 </div>
             </div>
         </div>

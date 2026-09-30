@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "description": "Site institucional da Infoservicos Tecnologias - site estatico no Cloudflare Workers",
-  "scripts": {
+"scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "preview": "wrangler dev --remote"
+    "tail": "wrangler tail",
+    "dev:painel": "wrangler dev -c painel/wrangler.toml",
+    "deploy:painel": "wrangler deploy -c painel/wrangler.toml",
+    "tail:painel": "wrangler tail -c painel/wrangler.toml"
   },
   "devDependencies": {
     "wrangler": "^4"

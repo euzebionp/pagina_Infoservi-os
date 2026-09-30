@@ -1,0 +1,34 @@
+# Cloudflare Workers - Painel do Cliente
+#
+# ATENCAO: este Worker e DIFERENTE de `pagina-infoservi-os` (o site publico).
+# Nunca ligue o Cloudflare Access neste arquivo de configuracao: o site
+# institucional precisa continuar publico.
+#
+# Deploy:  npm run deploy:painel
+# Dev:     npm run dev:painel
+# Docs:    https://developers.cloudflare.com/workers/configuration/cloudflare-access/
+
+# O subdomínio workers.dev é por CONTA (o seu e "infoservicos"). Nao existe
+# "criar um dominio novo": este `name` e o que gera
+# painel-infoservicos.infoservicos.workers.dev
+name = "painel-infoservicos"
+compatibility_date = "2026-09-30"
+main = "./worker/index.js"
+
+# Mantem o acesso pelo subdomínio workers.dev
+workers_dev = true
+
+# IMPORTANTE: nao adicione um bloco [assets] aqui.
+# Workers com Static Assets rodam atras de um router interno que nao repassa
+# o `ctx.access`, e o painel precisa dele para saber quem esta logado.
+
+# Permite testar o painel localmente sem fazer deploy:
+#   npm run dev:painel   ->  http://localhost:8787
+#
+# O `aud` e obrigatorio: o Wrangler nao sobe sem ele. Troque pelo AUD tag real
+# (Zero Trust > Access > Applications > sua aplicacao) quando souber.
+[access.dev]
+aud = "aud-tag-local-de-desenvolvimento"
+
+[access.dev.identity]
+email = "cliente@exemplo.com.br"

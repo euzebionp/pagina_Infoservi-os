@@ -3,7 +3,7 @@ node_modules/
 
 # cache e artefatos do wrangler
 .wrangler/
-worker/
+dist/
 .dev.vars
 
 # logs e temporarios

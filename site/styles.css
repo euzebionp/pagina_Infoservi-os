@@ -68,6 +68,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -79,13 +80,19 @@ nav {
     color: var(--primary-color);
     text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
     white-space: nowrap;
+    /* A logo cede espaco antes de invadir os links: encolhe e vira reticencias. */
+    flex: 0 1 auto;
     min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .nav-links {
     display: flex;
     flex-wrap: nowrap;
-    gap: 2rem;
+    gap: 1.5rem;
+    /* Nunca comprimir os links: sem folga eles vazariam por cima da logo. */
+    flex-shrink: 0;
 }
 
 .nav-links a {
@@ -371,9 +378,17 @@ nav {
 
 .client-login-card h2 {
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem);
     margin-bottom: 1rem;
     text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.client-card-icon {
+    display: block;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: var(--glow-primary);
 }
 
 .client-login-card > p {
@@ -382,60 +397,53 @@ nav {
     margin-bottom: 2rem;
 }
 
-.client-form .form-group {
-    margin-bottom: 1.25rem;
+.access-steps {
     text-align: left;
+    margin: 0 0 2rem;
+    padding-left: 1.35rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
-.client-form label {
-    display: block;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
+.access-steps li {
     margin-bottom: 0.5rem;
 }
 
-.client-form input[type="email"],
-.client-form input[type="password"] {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: var(--glass-border);
-    border-radius: 6px;
-    color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+.access-steps li:last-child {
+    margin-bottom: 0;
 }
 
-.client-form input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+.access-steps li::marker {
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
-.client-form input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: var(--glow-primary);
-}
-
-.client-notice {
-    display: none;
-    margin-bottom: 1rem;
-    padding: 0.75rem 1rem;
-    border: 1px solid rgba(255, 165, 0, 0.4);
-    border-radius: 6px;
-    background: rgba(255, 165, 0, 0.1);
-    color: #ffb347;
-    font-size: 0.85rem;
+.client-login-card > p.client-security-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
     text-align: left;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 1.5rem 0 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 243, 255, 0.25);
+    border-radius: 6px;
+    background: rgba(0, 243, 255, 0.05);
+    color: var(--text-muted);
 }
 
-.client-notice.visible {
-    display: block;
+.client-security-note > i {
+    color: var(--primary-color);
+    margin-top: 0.15rem;
+}
+
+.client-security-note strong {
+    color: var(--text-color);
 }
 
 .btn-block {
+    display: block;
     width: 100%;
     padding: 1rem;
     cursor: pointer;
@@ -500,8 +508,14 @@ footer p {
     }
 }
 
-/* Mobile / tablets em retrato: menu hamburger */
-@media (max-width: 1024px) {
+/* Mobile / tablets: menu hamburger
+ *
+ * O corte fica em 1120px, e nao nos 1024px habituais, por causa da folga.
+ * Em 1025-1120 a linha logo+7 links preenchia a largura EXATAMENTE (folga 0px):
+ * qualquer fonte um pouco mais larga - fonte do Google nao carregada, zoom do
+ * navegador, tamanho de fonte maior do usuario - fazia os links invadirem a
+ * logo. Cortando antes, essa faixa deixa de existir. */
+@media (max-width: 1120px) {
     :root {
         --gutter: 1.25rem;
         --header-h: 64px;
